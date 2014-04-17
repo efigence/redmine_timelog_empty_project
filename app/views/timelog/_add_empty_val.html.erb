@@ -1,0 +1,13 @@
+<%= javascript_tag do %>
+$(function(){
+  $("#time_entry_project_id").prepend("<option value='null' selected='selected'></option>");
+
+  $('#new_time_entry').submit(function(){
+    if( $("#time_entry_project_id").val()=='null' ){
+      $(this).removeAttr('data-submitted');
+      alert('Please choose a project');
+      return false;
+    }
+  });
+});
+<% end %>
